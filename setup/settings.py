@@ -14,9 +14,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap_modal_forms',
+    # 'book.apps.BooksConfig',
+    'naver_book_crawling',
     'widget_tweaks',
-    'examples',
+    'book',
     'tests',
 ]
 
@@ -37,7 +38,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'examples/templates'), ],
+        'DIRS': [os.path.join(BASE_DIR, 'book/templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -54,8 +55,12 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'book',
+        'USER': 'root',
+        'PASSWORD': 'xkzlxkzl1!',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
@@ -77,7 +82,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko'
 
 TIME_ZONE = 'UTC'
 
