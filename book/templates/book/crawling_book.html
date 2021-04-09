@@ -1,0 +1,22 @@
+<form method="post" action="{% url 'crawling_book' %}">
+  {% csrf_token %}
+  <div class="header">
+    <h3 class="title">크롤링</h3>
+  </div>
+  <div class="start">
+  <br>
+    <label for="searchsubject">검색어: </label>
+      <input id="searchsubject" type="text" size=30 name="searchsubject" value="{{ plusUrl }}" placeholder="제목, 저자, 출판사, ISBN 등 입력">
+      <br>
+    <label for="searchstartpage">시작 페이지: </label>
+      <input id="searchstartpage" type="text" name="searchstartpage" value="{{ searchStartPage }}" placeholder='숫자 입력'>
+      <br>
+    <label for="searchendpage">종료 페이지: </label>
+      <input id="searchendpage" type="text" name="searchendpage" value="{{ searchEndPage }}" placeholder='숫자 입력'> 
+
+    <input type="submit" value="시작" onClick="location.href='{% url 'crawling_book' %}';">
+  </div>
+<div class="footer">
+  <button type="button" class="btn btn-default" onClick="location.href='{% url 'index' %}';">뒤로가기</button>
+</div>
+</form>

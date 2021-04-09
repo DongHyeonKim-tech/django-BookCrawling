@@ -1,5 +1,14 @@
-Django==2.2.13
+Django==3.1.7
 django-bootstrap-modal-forms
 django-widget-tweaks
-selenium
 pytz
+
+webdriver_manager
+re
+bs4
+pandas
+time
+selenium
+sqlalchemy
+pymysql
+numpy

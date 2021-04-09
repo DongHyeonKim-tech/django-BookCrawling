@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% include "_modal.html" %}
+
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col" style="float:center;">
+
+
+        <div class="row">
+          <div class="col-12 mb-3">
+          </div>
+          <div class="col-12 mb-3">
+            {% if bidCrawling %}
+              {% include "_bid_table.html" %}
+            {% else %}
+              <p class="no-books text-primary">등록된 책이 없습니다.</p>
+            {% endif %}
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

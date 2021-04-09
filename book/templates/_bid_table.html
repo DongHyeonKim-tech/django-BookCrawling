@@ -1,0 +1,79 @@
+{% load widget_tweaks %}
+
+<style>
+.title {
+    float: center;
+}
+.left-box {
+    background: white;
+    float: left;
+    width: 20%;
+}
+.right-box {
+    background: white;
+    float: right;
+    width: 80%;
+    text-align: justify;
+}
+.footer{
+    float: right;
+}
+</style>
+<div class="header">
+  <h1 class="title"><b>< {{ bidCrawling.title }} > &nbsp </b>상세정보</h1>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="left-box" border="1">
+    <img src={{ bidCrawling.image }}>
+  </div>
+  <div class="right-box">
+    <font size="4em">
+    <b>No: </b>
+    {{ bidCrawling.bid }}
+    <br>
+    <b>제목:</b>
+    {{ bidCrawling.title }} &nbsp
+    <b>저자:</b>
+    {{ bidCrawling.writer }} &nbsp
+    <b>역자:</b>
+    {{ bidCrawling.translator }} &nbsp
+    <b>그림:</b>
+    {{ bidCrawling.painter }}
+    <br>
+    <b>카테고리:</b>
+    {{ bidCrawling.categorytop }} > {{ bidCrawling.categorymiddle }} > {{ bidCrawling.categorybottom }}
+    <br>
+    <b>출판사:</b>
+    {{ bidCrawling.publisher }} &nbsp
+    <b>출판일:</b>
+    {{ bidCrawling.publishdate }} &nbsp
+    <b>평점:</b>
+    {{ bidCrawling.grade }} &nbsp
+    <b>리뷰건수:</b>
+    {{ bidCrawling.review }}
+    <br>
+    <b>BID:</b>
+    <a href="https://book.naver.com/bookdb/book_detail.nhn?bid={{ bidCrawling.bid }}">{{ bidCrawling.bid }}</a> &nbsp
+    <b>ISBN:</b>
+    <a href="https://book.naver.com/search/search.nhn?sm=sta_hty.book&sug=&where=nexearch&query={{ bidCrawling.isbn }}">{{ bidCrawling.isbn }}</a>
+    </font>
+    <br>
+    <br>
+    <b>책 소개:</b>
+    {{ bidCrawling.intro }}
+    <br>
+    <br>
+    <b>목차:</b>
+    {{ bidCrawling.content }}
+    <br>
+    <br>
+    <b>저자 소개:</b></b>
+    {{ bidCrawling.authorintro }}
+  </div>
+</div>
+<br>
+<div class="footer">
+  <button type="button" class="btn btn-default" onClick="location.href='{% url 'bidIndex' %}';">뒤로가기</button>
+</div>

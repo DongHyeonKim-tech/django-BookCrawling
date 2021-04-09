@@ -1,0 +1,61 @@
+{% load widget_tweaks %}
+
+<div class="modal-header">
+  <h3 class="modal-title">상세정보</h3>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+
+  <div class="">
+    카테고리:
+    {{ BookCrawling.categorytop }} > {{ book.categorymiddle }} > {{ book.categorybottom }}
+  </div>
+  <div class="">
+    제목:
+    {{ book.title }}
+  </div>
+  <div class="">
+    저자:
+    {{ book.writer }}
+  </div>
+  <div class="">
+    역자:
+    {{ book.translator }}
+  </div>
+  <div class="">
+    그림:
+    {{ book.painter }}
+  </div>
+  <div class="">
+    출판사:
+    {{ book.publisher }}
+  </div>
+  <div class="">
+    출판일:
+    {{ book.publishdate }}
+  </div>
+  <div class="">
+    소개:
+    {{ book.intro }}
+  </div>
+  <div class="">
+    책 상세내용:
+    {{ book.detail }}
+  </div>
+  <div class="">
+    목차:
+    {{ book.content }}
+  </div>
+  <div class="">
+    저자 소개:
+    {{ book.authorintro }}
+  </div>
+
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>

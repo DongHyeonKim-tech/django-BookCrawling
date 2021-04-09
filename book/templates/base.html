@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    {% block stylesheets %}
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+      <!-- Font awesome CSS -->
+      <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+      <!-- Custom CSS -->
+      <style media="screen">
+        .invalid {
+          color: #dc3545;
+          font-size: 80%;
+        }
+        body {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+        .footer {
+          margin: auto 0 0;
+          height: 56px;
+        }
+        ul {
+          text-align: center;
+          width: 500px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        li {
+          list-style: none;
+          display: inline-block;
+        }
+        .left-box {
+          background: white;
+          float: left;
+          width: 50%;
+        }
+        .right-box {
+          background: white;
+          float: right;
+          width: 50%
+        }
+      </style>
+    {% endblock stylesheets %}
+
+    <title>책 크롤링</title>
+  </head>
+
+  <body>
+
+    <!-- Includes -->
+    {% comment %} {% include "_header.html" %} {% endcomment %}
+
+    {% block content %}{% endblock content %}
+
+    <!-- Includes -->
+    {% comment %} {% include "_footer.html" %} {% endcomment %}
+
+    <!-- JavaScript -->
+    {% block scripts %}
+      <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+      <script src="{% static 'assets/js/popper.min.js' %}"></script>
+      <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+      <!-- You can alternatively load the minified version -->
+      <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+    {% endblock scripts %}
+
+    {% block extrascripts %}{% endblock extrascripts %}
+
+  </body>
+
+</html>

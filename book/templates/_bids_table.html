@@ -1,0 +1,34 @@
+<table id="bids-table" class="table">
+  <thead>
+  <tr>
+    <th class="text-center" scope="col">BID</th>
+    <th class="text-center" scope="col" width=25%>제목</th>
+    <th class="text-center" scope="col" width=12%>저자</th>
+    <th class="text-center" scope="col" width=15%>출판사</th>
+    <th class="text-center" scope="col" width=12%>출판일</th>
+    <th class="text-center" scope="col">ISBN</th>
+    <th class="text-center" scope="col" width=12%>U / D</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for bid in bids %}
+    <tr>
+      <th class="text-center" scope="row"><a href="https://book.naver.com/bookdb/book_detail.nhn?bid={{ bid.bid }}">{{ bid.bid }}</a></td>
+      <td class="text-center"><a href="{% url 'bid_detail' bid.bid  %}">{{ bid.title }}</a></td>
+      <td class="text-center">{{ bid.writer }}</td>
+      <td class="text-center">{{ bid.publisher }}</td>
+      <td class="text-center">{{ bid.publishdate | date:'y-m-d' }}</td>
+      <td class="text-center"><a href="https://book.naver.com/search/search.nhn?sm=sta_hty.book&sug=&where=nexearch&query={{ bid.isbn }}">{{ bid.isbn }}</a></td>
+      <td class="text-center">
+       <button type="button" class="update-book btn btn-sm btn-primary" data-form-url="{% url 'bid_update_book' bid.pk %}">
+          <span class="fa fa-pencil"></span>
+        </button>
+        <!-- Delete book buttons -->
+        <button type="button" class="bs-modal delete-book btn btn-sm btn-danger" data-form-url="{% url 'bid_delete_book' bid.pk %}">
+          <span class="fa fa-trash"></span>
+        </button>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
