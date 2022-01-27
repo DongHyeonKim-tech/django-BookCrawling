@@ -22,6 +22,7 @@ django.setup()
 def get_text_list(tag_list):
     return [tag.text for tag in tag_list]
 
+# branch Test
 
 def book(request):
     data = json.loads(request.body)
